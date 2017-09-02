@@ -18,6 +18,9 @@ public:
     ~GGraphView();
     static GGraphView* Instance();
 
+protected:
+    void closeEvent(QCloseEvent *event);
+
 public:
     void run();
 

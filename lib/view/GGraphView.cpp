@@ -20,6 +20,11 @@ GGraphView* GGraphView::Instance() {
     return m_instance;
 }
 //===============================================
+void GGraphView::closeEvent(QCloseEvent *event) {
+    qApp->closeAllWindows();
+    event->accept();
+}
+//===============================================
 void GGraphView::run() {
     QVector<double> x(101), y(101);
     for (int i=0; i<101; ++i) {

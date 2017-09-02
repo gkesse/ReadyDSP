@@ -1,12 +1,14 @@
 //===============================================
 #include "GMessageView.h"
 #include "ui_GMessageView.h"
+#include <QDesktopWidget>
 //===============================================
 GMessageView* GMessageView::m_instance = 0;
 //===============================================
 GMessageView::GMessageView(QWidget *parent) :
 QWidget(parent), ui(new Ui::GMessageView) {
     ui->setupUi(this);
+    setPosition();
 }
 //===============================================
 GMessageView::~GMessageView() {
@@ -18,6 +20,15 @@ GMessageView* GMessageView::Instance() {
         m_instance = new GMessageView;
     }
     return m_instance;
+}
+//===============================================
+void GMessageView::setPosition() {
+    QRect m_desktop = QApplication::desktop()->screenGeometry();
+    int m_width = 400;
+    int m_height = 200;
+    int m_x = m_desktop.width() - m_width;
+    int m_y = m_desktop.height() - m_height - 50;
+    setGeometry(m_x, m_y, m_width, m_height);
 }
 //===============================================
 void GMessageView::showData(const QString& data, const QString& name) {

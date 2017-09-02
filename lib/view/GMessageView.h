@@ -18,6 +18,9 @@ public:
     ~GMessageView();
     static GMessageView* Instance();
 
+private:
+    void setPosition();
+
 public:
     void showData(const QString& data, const QString& name = "");
 
