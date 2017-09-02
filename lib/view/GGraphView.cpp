@@ -7,7 +7,6 @@ GGraphView* GGraphView::m_instance = 0;
 GGraphView::GGraphView(QWidget *parent) :
 QWidget(parent), ui(new Ui::GGraphView) {
     ui->setupUi(this);
-    run();
 }
 //===============================================
 GGraphView::~GGraphView() {

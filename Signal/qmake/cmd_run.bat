@@ -7,4 +7,3 @@ cd bin
 GProject
 cd ..
 echo.
-pause

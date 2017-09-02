@@ -7,7 +7,6 @@ GMessageView* GMessageView::m_instance = 0;
 GMessageView::GMessageView(QWidget *parent) :
 QWidget(parent), ui(new Ui::GMessageView) {
     ui->setupUi(this);
-    show();
 }
 //===============================================
 GMessageView::~GMessageView() {

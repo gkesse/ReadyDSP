@@ -22,7 +22,8 @@ QTextEdit {
 /*===============================================*/
 
 /* backgound */
-GMessageView {
+GMessageView,
+GGraphView {
     background: #051039;
 }
 
