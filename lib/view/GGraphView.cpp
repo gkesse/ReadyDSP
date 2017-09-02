@@ -25,18 +25,8 @@ void GGraphView::closeEvent(QCloseEvent *event) {
     event->accept();
 }
 //===============================================
-void GGraphView::run() {
-    QVector<double> x(101), y(101);
-    for (int i=0; i<101; ++i) {
-      x[i] = i/50.0 - 1;
-      y[i] = x[i]*x[i];
-    }
-
-    ui->m_graph->addGraph();
-    ui->m_graph->graph(0)->setData(x, y);
-    ui->m_graph->xAxis->setRange(-1, 1);
-    ui->m_graph->yAxis->setRange(0, 1);
-    ui->m_graph->replot();
+QCustomPlot* GGraphView::graph() const {
+    return ui->m_graph;
 }
 //===============================================
 

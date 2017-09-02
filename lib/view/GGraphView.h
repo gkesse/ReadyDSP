@@ -3,6 +3,7 @@
 #define _GGraphView_
 //===============================================
 #include <QWidget>
+#include "qcustomplot.h"
 //===============================================
 namespace Ui {
 class GGraphView;
@@ -22,7 +23,7 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 public:
-    void run();
+    QCustomPlot* graph() const;
 
 private:
     static GGraphView* m_instance;
