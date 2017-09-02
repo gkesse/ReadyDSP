@@ -18,14 +18,21 @@ public:
 public:
     QVector<double> getX() const;
     QVector<double> getY() const;
+    QVector<double> getYAvg() const;
+    QVector<double> getYVar() const;
+    QVector<double> getYStdDev() const;
     double getXmin() const;
     double getXmax() const;
     double getYmin() const;
     double getYmax() const;
+    double getAvg() const;
 
 public:
     void square();
-    
+    void average();
+    void variance();
+    void stdDeviation();
+
 private:
     static GSignal* m_instance;
     QVector<double> m_x;
@@ -37,6 +44,15 @@ private:
     double m_xWidth;
     double m_yWidth;
     double m_border;
+
+    QVector<double> m_yAvg;
+    double m_avg;
+
+    QVector<double> m_yVar;
+    double m_var;
+
+    QVector<double> m_yStdDev;
+    double m_stdDev;
 };
 
 #endif
