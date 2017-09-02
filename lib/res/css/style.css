@@ -1,0 +1,30 @@
+/*===============================================*/
+/* Common Style */
+/*===============================================*/
+
+/* QWidget */
+QWidget {
+    font-family: arial;
+    font-size: 14px;
+    color: white;
+    background: transparent;
+    border: none;
+}
+
+/* QTextEdit */
+QTextEdit {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 9px;
+}
+
+/*===============================================*/
+/* Customized Style */
+/*===============================================*/
+
+/* backgound */
+GMessageView {
+    background: #051039;
+}
+
+
+
