@@ -21,6 +21,7 @@ public:
     QVector<double> getYAvg() const;
     QVector<double> getYVar() const;
     QVector<double> getYStdDev() const;
+    QVector<double> getYFFT() const;
     double getXmin() const;
     double getXmax() const;
     double getYmin() const;
@@ -32,6 +33,7 @@ public:
     void average();
     void variance();
     void stdDeviation();
+    void fft();
 
 private:
     static GSignal* m_instance;
@@ -53,6 +55,8 @@ private:
 
     QVector<double> m_yStdDev;
     double m_stdDev;
+
+    QVector<double> m_yFFT;
 };
 
 #endif

@@ -38,4 +38,29 @@ void GMessageView::showData(const QString& data, const QString& name) {
     ui->m_message->append(m_format);
 }
 //===============================================
+void GMessageView::showData(const int& data, const QString& name) {
+    QString m_format = QString("%1").arg(data);
+    showData(m_format, name);
+}
+//===============================================
+void GMessageView::showData(const uint& data, const QString& name) {
+    QString m_format = QString("%1").arg(data);
+    showData(m_format, name);
+}
+//===============================================
+void GMessageView::showData(const long& data, const QString& name) {
+    QString m_format = QString("%1").arg(data);
+    showData(m_format, name);
+}
+//===============================================
+void GMessageView::showData(const ulong& data, const QString& name) {
+    QString m_format = QString("%1").arg(data);
+    showData(m_format, name);
+}
+//===============================================
+void GMessageView::showData(const double& data, const QString& name) {
+    QString m_format = QString("%1").arg(data);
+    showData(m_format, name);
+}
+//===============================================
 

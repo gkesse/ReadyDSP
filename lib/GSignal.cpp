@@ -1,12 +1,13 @@
 //===============================================
 #include "GSignal.h"
 #include "GMessageView.h"
+#include "GGlobal.h"
 #include <QtMath>
 //===============================================
 GSignal* GSignal::m_instance = 0;
 //===============================================
 GSignal::GSignal(QObject *parent) :
-QObject(parent) {
+    QObject(parent) {
     m_border = 0.1;
 }
 //===============================================
@@ -39,6 +40,10 @@ QVector<double> GSignal::getYVar() const {
 //===============================================
 QVector<double> GSignal::getYStdDev() const {
     return m_yStdDev;
+}
+//===============================================
+QVector<double> GSignal::getYFFT() const {
+    return m_yFFT;
 }
 //===============================================
 double GSignal::getXmin() const {
@@ -150,4 +155,60 @@ void GSignal::stdDeviation() {
     }
 }
 //===============================================
+void GSignal::fft() {
+    m_yFFT = m_y;
 
+    /*ulong n;
+    ulong mmax;
+    ulong m;
+    ulong j;
+    ulong istep;
+    ulong i;
+    double wtemp, wr, wpr, wpi, wi, theta;
+    double tempr, tempi;
+
+    ulong nn = m_yFFT.size() - 1;
+    n = nn<<1;
+    j=1;
+    for (i=1; i<n; i+=2) {
+        if (j>i) {
+            GGlobal::Instance()->swap(m_yFFT[j-1], m_yFFT[i-1]);
+            GGlobal::Instance()->swap(m_yFFT[j], m_yFFT[i]);
+        }
+        m = nn;
+        while (m>=2 && j>m) {
+            j -= m;
+            m >>= 1;
+        }
+        j += m;
+    };
+
+    // here begins the Danielson-Lanczos section
+    mmax=2;
+    while (n>mmax) {
+        istep = mmax<<1;
+        theta = -(2*M_PI/mmax);
+        wtemp = sin(0.5*theta);
+        wpr = -2.0*wtemp*wtemp;
+        wpi = sin(theta);
+        wr = 1.0;
+        wi = 0.0;
+        for (m=1; m < mmax; m += 2) {
+            for (i=m; i <= n; i += istep) {
+                j=i+mmax;
+                tempr = wr*m_yFFT[j-1] - wi*m_yFFT[j];
+                tempi = wr * m_yFFT[j] + wi*m_yFFT[j-1];
+
+                m_yFFT[j-1] = m_yFFT[i-1] - tempr;
+                m_yFFT[j] = m_yFFT[i] - tempi;
+                m_yFFT[i-1] += tempr;
+                m_yFFT[i] += tempi;
+            }
+            wtemp=wr;
+            wr += wr*wpr - wi*wpi;
+            wi += wi*wpr + wtemp*wpi;
+        }
+        mmax=istep;
+    }*/
+}
+//===============================================
