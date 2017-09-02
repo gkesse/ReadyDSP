@@ -30,10 +30,13 @@ private:
     static GSignal* m_instance;
     QVector<double> m_x;
     QVector<double> m_y;
-    double m_xmin;
-    double m_xmax;
-    double m_ymin;
-    double m_ymax;
+    double m_xMin;
+    double m_xMax;
+    double m_yMin;
+    double m_yMax;
+    double m_xWidth;
+    double m_yWidth;
+    double m_border;
 };
 
 #endif

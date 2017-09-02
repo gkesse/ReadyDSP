@@ -7,7 +7,7 @@ GSignal* GSignal::m_instance = 0;
 //===============================================
 GSignal::GSignal(QObject *parent) :
 QObject(parent) {
-
+    m_border = 0.1;
 }
 //===============================================
 GSignal::~GSignal() {
@@ -30,19 +30,19 @@ QVector<double> GSignal::getY() const {
 }
 //===============================================
 double GSignal::getXmin() const {
-    return m_xmin;
+    return m_xMin;
 }
 //===============================================
 double GSignal::getXmax() const {
-    return m_xmax;
+    return m_xMax;
 }
 //===============================================
 double GSignal::getYmin() const {
-    return m_ymin;
+    return m_yMin - m_border*m_yWidth;
 }
 //===============================================
 double GSignal::getYmax() const {
-    return m_ymax;
+    return m_yMax + m_border*m_yWidth;
 }
 //===============================================
 void GSignal::square() {
@@ -50,7 +50,7 @@ void GSignal::square() {
     double T = 1/F;
     double tmin = -2*T;
     double tmax = 2*T;
-    int N = 10;
+    int N = 100;
     double Te = T/N;
     int Nmax = (tmax - tmin)/Te;
     double Vmin = -1;
@@ -68,10 +68,12 @@ void GSignal::square() {
         m_x[i] = xt;
         m_y[i] = yt;
     }
-    m_xmin = tmin;
-    m_xmax = tmax;
-    m_ymin = Vmin;
-    m_ymax = Vmax;
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = Vmin;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
 

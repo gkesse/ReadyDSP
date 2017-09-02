@@ -33,6 +33,7 @@ void GProcess::run() {
     QCustomPlot* m_graph = GGraphView::Instance()->graph();
     m_graph->addGraph();
     m_graph->graph(0)->setData(m_x, m_y);
+    m_graph->graph(0)->setPen(QPen(QBrush("blue"), 2));
     m_graph->xAxis->setRange(m_xmin, m_xmax);
     m_graph->yAxis->setRange(m_ymin, m_ymax);
 }
