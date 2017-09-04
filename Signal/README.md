@@ -45,7 +45,9 @@ public:
 
 La génération d'un signal :  
 
-**GSignal** est la classe chargée de la génération de signaux.  
+**GSignal** est la classe chargée de la génération de signaux. 
+
+Pour générer un signal :  
 `GSignal::Instance()->sinus();`
 
 # Signal Sinus
