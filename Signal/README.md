@@ -36,7 +36,7 @@ public:
     void sinus(); //signal sinus
     void cosinus(); // signal cosinus
     void halfwave(); // signal mono-alternance
-    void fullwave(); // signal mono-alternance
+    void fullwave(); // signal double-alternance
     void square(); // signal carré
     void triangle(); // signal triangle
     void sawtooth(); // signal dent de scie
