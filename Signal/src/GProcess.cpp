@@ -22,7 +22,7 @@ GProcess* GProcess::Instance() {
 }
 //===============================================
 void GProcess::run() {
-    GSignal::Instance()->sawtooth();
+    GSignal::Instance()->polynomial();
 
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
