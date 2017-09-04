@@ -1,7 +1,6 @@
 # Signal
 
 Un **Signal** est une grandeur qui peut varier dans le temps.  
-**GSignal** est la classe chargée de la génération de signaux.
 
 # Programme de Test
 
@@ -43,6 +42,11 @@ public:
     void sawtooth(); // signal dent de scie
     void polynomial(); // signal polynôme
 ```
+
+Génération d'un Signal
+
+**GSignal** est la classe chargée de la génération de signaux.
+GSignal::Instance()->sinus();
 
 # Signal Sinus
 
