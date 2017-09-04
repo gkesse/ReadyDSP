@@ -264,8 +264,7 @@ void GSignal::sawtooth() {
         double yi;
         double x0;
         if((i % N) == 0) x0 = xi;
-        if((i % N) < (N/2)) yi = A*(xi - x0) + Vmin;
-        else yi = -A*(xi - x0) + Vmax;
+        yi = A*(xi - x0) + Vmin;
         m_x[i] = xi;
         m_y[i] = yi;
     }
