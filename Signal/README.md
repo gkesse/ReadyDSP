@@ -1,6 +1,6 @@
 # Signal
 
-Un **Signal** est une grandeur qui peut varier dans le temps.
+Un **Signal** est une grandeur qui peut varier dans le temps.  
 **GSignal** est la classe chargée de la génération de signaux.
 
 # Programme de Test
