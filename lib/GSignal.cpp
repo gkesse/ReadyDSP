@@ -1,7 +1,7 @@
 //===============================================
 #include "GSignal.h"
+#include "GMinMax.h"
 #include "GMessageView.h"
-#include "GGlobal.h"
 #include <QtMath>
 //===============================================
 GSignal* GSignal::m_instance = 0;
@@ -30,22 +30,6 @@ QVector<double> GSignal::getY() const {
     return m_y;
 }
 //===============================================
-QVector<double> GSignal::getYAvg() const {
-    return m_yAvg;
-}
-//===============================================
-QVector<double> GSignal::getYVar() const {
-    return m_yVar;
-}
-//===============================================
-QVector<double> GSignal::getYStdDev() const {
-    return m_yStdDev;
-}
-//===============================================
-QVector<double> GSignal::getYFFT() const {
-    return m_yFFT;
-}
-//===============================================
 double GSignal::getXmin() const {
     return m_xMin;
 }
@@ -62,8 +46,130 @@ double GSignal::getYmax() const {
     return m_yMax + m_border*m_yWidth;
 }
 //===============================================
-double GSignal::getAvg() const {
-    return m_avg;
+void GSignal::sinus() {
+    double F = 50;
+    double W = 2*M_PI*F;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmax = 2;
+
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi = Vmax*qSin(W*xi);
+        m_x[i] = xi;
+        m_y[i] = yi;
+    }
+
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = -Vmax;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
+}
+//===============================================
+void GSignal::cosinus() {
+    double F = 50;
+    double W = 2*M_PI*F;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmax = 2;
+
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi = Vmax*qCos(W*xi);
+        m_x[i] = xi;
+        m_y[i] = yi;
+    }
+
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = -Vmax;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
+}
+//===============================================
+void GSignal::monosin() {
+    double F = 50;
+    double W = 2*M_PI*F;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmax = 2;
+    int N = T/Te + 1;
+
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi;
+        if((i % N) < (N/2)) yi = Vmax*qSin(W*xi);
+        else yi = 0;
+        m_x[i] = xi;
+        m_y[i] = yi;
+    }
+
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = -Vmax;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
+}
+//===============================================
+void GSignal::doublesin() {
+    double F = 50;
+    double W = 2*M_PI*F;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmax = 2;
+    int N = T/Te + 1;
+
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi;
+        if((i % N) < (N/2)) yi = Vmax*qSin(W*xi);
+        else yi = -Vmax*qSin(W*xi);
+        m_x[i] = xi;
+        m_y[i] = yi;
+    }
+
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = -Vmax;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
 void GSignal::square() {
@@ -71,24 +177,26 @@ void GSignal::square() {
     double T = 1/F;
     double tmin = -2*T;
     double tmax = 2*T;
-    int N = 100;
-    double Te = T/N;
-    int Nmax = (tmax - tmin)/Te;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
     double Vmin = -1;
     double Vmax = 1;
+    int N = T/Te + 1;
 
-    m_x.resize(Nmax + 1);
-    m_y.resize(Nmax + 1);
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
 
-    for(int i = 0; i <= Nmax; i++) {
-        double dt = i*Te;
-        double xt = tmin + dt;
-        double yt;
-        if((i % N) <= (N/2)) yt = Vmax;
-        else yt = Vmin;
-        m_x[i] = xt;
-        m_y[i] = yt;
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi;
+        if((i % N) < (N/2)) yi = Vmax;
+        else yi = Vmin;
+        m_x[i] = xi;
+        m_y[i] = yi;
     }
+
     m_xMin = tmin;
     m_xMax = tmax;
     m_yMin = Vmin;
@@ -97,118 +205,114 @@ void GSignal::square() {
     m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
-void GSignal::average() {
-    double Sum = 0;
-    double N = m_y.size();
-    m_yAvg.resize(N);
+void GSignal::triangle() {
+    double F = 50;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmin = -1;
+    double Vmax = 1;
+    double A = 2*(Vmax - Vmin)/T;
+    int N = T/Te + 1;
 
-    for(int i = 0; i < N; i++) {
-        double Yi = m_y[i];
-        Sum += Yi;
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi;
+        double x0;
+        if((i % N) == 0) x0 = xi;
+        if((i % N) == (N/2)) x0 = xi;
+        if((i % N) < (N/2)) yi = A*(xi - x0) + Vmin;
+        else yi = -A*(xi - x0) + Vmax;
+        m_x[i] = xi;
+        m_y[i] = yi;
     }
 
-    m_avg = Sum/N;
-
-    for(int i = 0; i < N; i++) {
-        m_yAvg[i] = m_avg;
-    }
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = Vmin;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
-void GSignal::variance() {
-    double Sum = 0;
-    double Sum2 = 0;
-    double N = m_y.size();
-    m_yVar.resize(N);
+void GSignal::sawtooth() {
+    double F = 50;
+    double T = 1/F;
+    double tmin = -2*T;
+    double tmax = 2*T;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    double Vmin = -1;
+    double Vmax = 1;
+    double A = (Vmax - Vmin)/T;
+    int N = T/Te + 1;
 
-    for(int i = 0; i < N; i++) {
-        double Yi = m_y[i];
-        Sum += Yi;
-        Sum2 += Yi*Yi;
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
+
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi;
+        double x0;
+        if((i % N) == 0) x0 = xi;
+        if((i % N) < (N/2)) yi = A*(xi - x0) + Vmin;
+        else yi = -A*(xi - x0) + Vmax;
+        m_x[i] = xi;
+        m_y[i] = yi;
     }
 
-    m_avg = Sum/N;
-    m_var = Sum2/N - m_avg*m_avg;
-
-    for(int i = 0; i < N; i++) {
-        m_yVar[i] = m_var;
-    }
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = Vmin;
+    m_yMax = Vmax;
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
-void GSignal::stdDeviation() {
-    double Sum = 0;
-    double Sum2 = 0;
-    double N = m_y.size();
-    m_yStdDev.resize(N);
+void GSignal::polynomial() {
+    double A[] = {1.0/4, 3.0/4, -3.0/2, -2.0};
+    int S = sizeof(A)/sizeof(double);
+    int D = S - 1;
+    double tmin = -5;
+    double tmax = 3;
+    int Npow = 8;
+    int Nmax = (int)qPow(2.0, (double)Npow);
+    double Te = (tmax - tmin)/(Nmax - 1);
+    m_x.resize(Nmax);
+    m_y.resize(Nmax);
 
-    for(int i = 0; i < N; i++) {
-        double Yi = m_y[i];
-        Sum += Yi;
-        Sum2 += Yi*Yi;
+    for(int i = 0; i < Nmax; i++) {
+        double di = i*Te;
+        double xi = tmin + di;
+        double yi = 0;
+
+        for(int j = 0; j <= D; j++) {
+            double aj = A[j];
+            if(aj == 0) continue;
+            double xj = qPow(xi, (double)(D - j));
+            double yj = aj*xj;
+            yi += yj;
+        }
+        m_x[i] = xi;
+        m_y[i] = yi;
     }
 
-    m_avg = Sum/N;
-    m_var = Sum2/N - m_avg*m_avg;
-    m_stdDev = qSqrt(m_var);
-
-    for(int i = 0; i < N; i++) {
-        m_yStdDev[i] = m_stdDev;
-    }
-}
-//===============================================
-void GSignal::fft() {
-    m_yFFT = m_y;
-
-    /*ulong n;
-    ulong mmax;
-    ulong m;
-    ulong j;
-    ulong istep;
-    ulong i;
-    double wtemp, wr, wpr, wpi, wi, theta;
-    double tempr, tempi;
-
-    ulong nn = m_yFFT.size() - 1;
-    n = nn<<1;
-    j=1;
-    for (i=1; i<n; i+=2) {
-        if (j>i) {
-            GGlobal::Instance()->swap(m_yFFT[j-1], m_yFFT[i-1]);
-            GGlobal::Instance()->swap(m_yFFT[j], m_yFFT[i]);
-        }
-        m = nn;
-        while (m>=2 && j>m) {
-            j -= m;
-            m >>= 1;
-        }
-        j += m;
-    };
-
-    // here begins the Danielson-Lanczos section
-    mmax=2;
-    while (n>mmax) {
-        istep = mmax<<1;
-        theta = -(2*M_PI/mmax);
-        wtemp = sin(0.5*theta);
-        wpr = -2.0*wtemp*wtemp;
-        wpi = sin(theta);
-        wr = 1.0;
-        wi = 0.0;
-        for (m=1; m < mmax; m += 2) {
-            for (i=m; i <= n; i += istep) {
-                j=i+mmax;
-                tempr = wr*m_yFFT[j-1] - wi*m_yFFT[j];
-                tempi = wr * m_yFFT[j] + wi*m_yFFT[j-1];
-
-                m_yFFT[j-1] = m_yFFT[i-1] - tempr;
-                m_yFFT[j] = m_yFFT[i] - tempi;
-                m_yFFT[i-1] += tempr;
-                m_yFFT[i] += tempi;
-            }
-            wtemp=wr;
-            wr += wr*wpr - wi*wpi;
-            wi += wi*wpr + wtemp*wpi;
-        }
-        mmax=istep;
-    }*/
+    GMinMax::Instance()->setData(m_y);
+    GMinMax::Instance()->run();
+    m_xMin = tmin;
+    m_xMax = tmax;
+    m_yMin = GMinMax::Instance()->getMin();
+    m_yMax = GMinMax::Instance()->getMax();
+    m_xWidth = m_xMax - m_xMin;
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================

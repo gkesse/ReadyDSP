@@ -1,39 +1,44 @@
 //===============================================
-#ifndef _GSignal_
-#define _GSignal_
+#ifndef _GAverage_
+#define _GAverage_
 //===============================================
 #include <QObject>
 #include <QVector>
 //===============================================
-class GSignal : public QObject {
+class GAverage : public QObject {
     Q_OBJECT
 
 private:
-    GSignal(QObject* parent = 0);
+    GAverage(QObject* parent = 0);
 
 public:
-    ~GSignal();
-    static GSignal* Instance();
+    ~GAverage();
+    static GAverage* Instance();
 
 public:
     QVector<double> getX() const;
     QVector<double> getY() const;
+    QVector<double> getYAvg() const;
+    QVector<double> getYVar() const;
+    QVector<double> getYStdDev() const;
+    QVector<double> getYFFT() const;
     double getXmin() const;
     double getXmax() const;
     double getYmin() const;
     double getYmax() const;
+    double getAvg() const;
 
 public:
-    void sinus();
-    void cosinus();
-    void monosin();
-    void doublesin();
     void square();
-    void triangle();
-    void polynomial();
+
+public:
+    void average();
+    void variance();
+    void stdDeviation();
+    void fft();
 
 private:
-    static GSignal* m_instance;
+    static GAverage* m_instance;
     QVector<double> m_x;
     QVector<double> m_y;
     double m_xMin;
@@ -44,6 +49,16 @@ private:
     double m_yWidth;
     double m_border;
 
+    QVector<double> m_yAvg;
+    double m_avg;
+
+    QVector<double> m_yVar;
+    double m_var;
+
+    QVector<double> m_yStdDev;
+    double m_stdDev;
+
+    QVector<double> m_yFFT;
 };
 
 #endif

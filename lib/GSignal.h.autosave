@@ -30,6 +30,7 @@ public:
     void doublesin();
     void square();
     void triangle();
+    void sawtooth();
     void polynomial();
 
 private:
