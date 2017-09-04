@@ -26,8 +26,8 @@ public:
 public:
     void sinus();
     void cosinus();
-    void monosin();
-    void doublesin();
+    void halfwave();
+    void fullwave();
     void square();
     void triangle();
     void sawtooth();

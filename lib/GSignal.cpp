@@ -106,7 +106,7 @@ void GSignal::cosinus() {
     m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
-void GSignal::monosin() {
+void GSignal::halfwave() {
     double F = 50;
     double W = 2*M_PI*F;
     double T = 1/F;
@@ -139,7 +139,7 @@ void GSignal::monosin() {
     m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
-void GSignal::doublesin() {
+void GSignal::fullwave() {
     double F = 50;
     double W = 2*M_PI*F;
     double T = 1/F;
