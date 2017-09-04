@@ -40,7 +40,7 @@ public:
     void square(); // signal carré
     void triangle(); // signal triangle
     void sawtooth(); // signal dent de scie
-    void polynomial(); // signal Polynôme
+    void polynomial(); // signal polynôme
 ```
 
 # Signal Sinus
