@@ -4,7 +4,7 @@ Un **Signal** est une grandeur qui peut varier dans le temps.
 
 # Programme de Test
 
-Le programme de test :
+* **Le programme de test**
 
 ```
 //===============================================
@@ -29,7 +29,7 @@ void GProcess::run() {
 //===============================================
 ```
 
-Les signaux développés :
+* **Les signaux développés**
 
 ```
 public:
@@ -43,9 +43,9 @@ public:
     void polynomial(); // signal polynôme
 ```
 
-Génération d'un Signal
+* **La génération d'un signal**
 
-**GSignal** est la classe chargée de la génération de signaux.
+**GSignal** est la classe chargée de la génération de signaux.  
 GSignal::Instance()->sinus();
 
 # Signal Sinus
