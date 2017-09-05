@@ -1,6 +1,6 @@
 # Echantillonnage
 
-L'**Echantillonnage** est un processus qui consiste à prélever les valeurs d'un signal 
+L'**Echantillonnage** est le processus qui consiste à prélever les valeurs d'un signal 
 à des intervalles de temps réguliers.  
 
 # Programme de Test
@@ -37,25 +37,6 @@ void GProcess::run() {
 }
 //===============================================
 ```
-
-Les signaux développés :
-
-```
-public:
-    void sinus(); //signal sinus
-    void cosinus(); // signal cosinus
-    void halfwave(); // signal mono-alternance
-    void fullwave(); // signal double-alternance
-    void square(); // signal carré
-    void triangle(); // signal triangle
-    void sawtooth(); // signal dent de scie
-    void polynomial(); // signal polynôme
-```
-
-La génération d'un signal :  
-
-**GSignal** est la classe chargée de la génération de signaux. 
-`GSignal::Instance()->sinus();`
 
 L'échantillonnage d'un signal :  
 
