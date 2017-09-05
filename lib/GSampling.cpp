@@ -53,10 +53,6 @@ void GSampling::run() {
         if((i % Ne) == 0) {
             m_xSamp[j] = m_xData[i];
             m_ySamp[j] = m_yData[i];
-            QString m_format = QString("%1 : (%2 ; %3) : (%4 ; %5)")
-                    .arg(j).arg(m_xSamp[j]).arg(m_ySamp[j])
-                    .arg(m_xData[i]).arg(m_yData[i]);
-            GMessageView::Instance()->showData(m_format);
             j++;
         }
     }
