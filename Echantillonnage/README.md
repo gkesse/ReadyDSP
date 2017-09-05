@@ -1,7 +1,7 @@
 # Echantillonnage
 
 L'**Echantillonnage** est un processus qui consiste à prélever les valeurs d'un signal 
-à des intervalles réguliers.  
+à des intervalles de temps réguliers.  
 
 # Programme de Test
 
