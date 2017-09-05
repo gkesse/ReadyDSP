@@ -42,7 +42,6 @@ private:
     double m_xMax;
     double m_yMin;
     double m_yMax;
-    int m_id;
 };
 //===============================================
 #endif

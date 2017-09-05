@@ -110,8 +110,8 @@ void GSignal::halfwave() {
     double F = 50;
     double W = 2*M_PI*F;
     double T = 1/F;
-    double tmin = -2*T;
-    double tmax = 2*T;
+    double tmin = -1*T;
+    double tmax = +1*T;
     int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
@@ -143,8 +143,8 @@ void GSignal::fullwave() {
     double F = 50;
     double W = 2*M_PI*F;
     double T = 1/F;
-    double tmin = -2*T;
-    double tmax = 2*T;
+    double tmin = -1*T;
+    double tmax = +1*T;
     int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
@@ -208,8 +208,8 @@ void GSignal::square() {
 void GSignal::triangle() {
     double F = 50;
     double T = 1/F;
-    double tmin = -2*T;
-    double tmax = 2*T;
+    double tmin = -1*T;
+    double tmax = +1*T;
     int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
@@ -245,8 +245,8 @@ void GSignal::triangle() {
 void GSignal::sawtooth() {
     double F = 50;
     double T = 1/F;
-    double tmin = -2*T;
-    double tmax = 2*T;
+    double tmin = -1*T;
+    double tmax = +1*T;
     int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
