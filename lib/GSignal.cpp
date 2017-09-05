@@ -53,7 +53,7 @@ void GSignal::sinus() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
 
@@ -83,7 +83,7 @@ void GSignal::cosinus() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
 
@@ -113,7 +113,7 @@ void GSignal::halfwave() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
     int N = T/Te + 1;
@@ -146,7 +146,7 @@ void GSignal::fullwave() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
     int N = T/Te + 1;
@@ -175,8 +175,8 @@ void GSignal::fullwave() {
 void GSignal::square() {
     double F = 50;
     double T = 1/F;
-    double tmin = -2*T;
-    double tmax = 2*T;
+    double tmin = -1*T;
+    double tmax = +1*T;
     int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
@@ -211,7 +211,7 @@ void GSignal::triangle() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmin = -1;
     double Vmax = 1;
@@ -248,7 +248,7 @@ void GSignal::sawtooth() {
     double tmin = -2*T;
     double tmax = 2*T;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmin = -1;
     double Vmax = 1;
@@ -284,7 +284,7 @@ void GSignal::polynomial() {
     double tmin = -5;
     double tmax = 3;
     int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow);
+    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     m_x.resize(Nmax);
     m_y.resize(Nmax);

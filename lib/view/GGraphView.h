@@ -23,11 +23,26 @@ protected:
     void closeEvent(QCloseEvent *event);
 
 public:
-    QCustomPlot* graph() const;
+    void setColor(const QBrush& color);
+    void setData(const QVector<double>& x, const QVector<double>& y);
+    void setXRange(const double& xMin, const double& xMax);
+    void setYRange(const double& yMin, const double& yMax);
+
+public:
+    void drawGraph();
+    void drawSample();
 
 private:
     static GGraphView* m_instance;
     Ui::GGraphView *ui;
+    QBrush m_color;
+    QVector<double> m_xData;
+    QVector<double> m_yData;
+    double m_xMin;
+    double m_xMax;
+    double m_yMin;
+    double m_yMax;
+    int m_id;
 };
 //===============================================
 #endif
