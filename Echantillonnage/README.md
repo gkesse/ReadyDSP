@@ -5,12 +5,11 @@ L'**Echantillonnage** est la technique qui consiste à prélever les valeurs d'un 
 
 # Programme de Test
 
-**GProcess** est la classe chargée de l'exécution du programme principal.
+**GProcess** est la classe chargée de l'exécution du programme de test.
 ```
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->sinus();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xMin = GSignal::Instance()->getXmin();
@@ -37,7 +36,7 @@ void GProcess::run() {
 //===============================================
 ```
 
-**GSampling** est la classe chargée de l'échantillonnage de signaux.  
+**GSampling** est la classe chargée de l'échantillonnage d'un signal.  
 `GSampling::Instance()->run();`
 
 # Signal Sinus

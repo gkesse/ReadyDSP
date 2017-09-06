@@ -4,7 +4,7 @@ Un **Signal** est une grandeur qui peut varier dans le temps.
 
 # Programme de Test
 
-**GProcess** est la classe chargée de l'exécution du programme principal.
+**GProcess** est la classe chargée de l'exécution du programme de test.
 ```
 //===============================================
 void GProcess::run() {

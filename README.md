@@ -15,6 +15,12 @@ Avec à la fois des compétences en Systèmes Embarqués et en Robotique.
 C'est une bibliothèque développée en C++ et maintenu par 
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
+Les concepts abordées :  
+[Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
+[Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Echantillonnage")  
+[Transformée de Fourier Discrète](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Transformée de Fourier Discrète")  
+[Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
+
 # Technologies
 
 Le développement de la bibliothèque **ReadyDSP** a nécessité les technologies suivantes :
@@ -23,5 +29,4 @@ Le développement de la bibliothèque **ReadyDSP** a nécessité les technologies su
 * IDE : **Visual Studio**
 * Outil de Construction : **NMake, Cygwin**
 * Editeur de Texte : **Notepad++**
-* Concept DSP : **Transformation de Fourier Rapide**
 * Cible : **Windows, UNIX**

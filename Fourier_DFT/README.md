@@ -8,12 +8,11 @@ La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée a
 
 # Programme de Test
 
-**GProcess** est la classe chargée de l'exécution du programme principal.
+**GProcess** est la classe chargée de l'exécution du programme de test.
 ```
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->sinus();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
 
