@@ -4,13 +4,11 @@ Un **Signal** est une grandeur qui peut varier dans le temps.
 
 # Programme de Test
 
-Le programme de test :
-
+**GProcess** est la classe chargée de l'exécution du programme principale.
 ```
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->polynomial();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xMin = GSignal::Instance()->getXmin();

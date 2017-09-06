@@ -1,12 +1,11 @@
 # Echantillonnage
 
-L'**Echantillonnage** est le processus qui consiste à prélever les valeurs d'un signal 
+L'**Echantillonnage** est la technique qui consiste à prélever les valeurs d'un signal 
 à intervalles de temps réguliers.  
 
 # Programme de Test
 
-Le programme de test :
-
+**GProcess** est la classe chargée de l'exécution du programme principale.
 ```
 //===============================================
 void GProcess::run() {
@@ -38,55 +37,42 @@ void GProcess::run() {
 //===============================================
 ```
 
-L'échantillonnage d'un signal :  
-
 **GSampling** est la classe chargée de l'échantillonnage de signaux.  
 `GSampling::Instance()->run();`
 
 # Signal Sinus
 
-Le signal sinus :
-
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/sinus.png)
 
 # Signal Cosinus
-
-Le signal cosinus :
 
 ![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/cosinus.png)
 
 # Signal Mono-Alternance
 
-Le signal mono-alternance :
-
 ![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/halfwave.png)
 
 # Signal Double-Alternance
-
-Le signal double-alternance :
 
 ![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/fullwave.png)
 
 # Signal Carré
 
-Le signal carré :
-
 ![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/square.png)
 
 # Signal Triangle
-
-Le signal triangle :
 
 ![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/triangle.png)
 
 # Signal Dent de Scie
 
-Le signal dent de scie :
-
 ![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/sawtooth.png)
 
 # Signal Polynôme
 
-Le signal polynôme :
-
 ![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/polynomial.png)
+
+# Voir Aussi
+
+[Précédent : Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
+[Suivant : Fourier DFT](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Fourier DFT)")  
