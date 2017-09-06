@@ -1,6 +1,6 @@
 # Transformée de Fourier Discrète (DFT)
 
-La **Transformée de Fourier** est la technique qui permet de calculer le spectre d'un signal.
+La **Transformée de Fourier** est la technique qui permet de calculer le spectre d'un signal.  
 Le spectre d'un signal est la représentation des intensités des sinusoïdes
 contenues dans un signal en fonction de leurs fréquences. 
 
