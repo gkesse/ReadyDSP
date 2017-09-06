@@ -28,7 +28,7 @@ void GProcess::run() {
 **GSignal** est la classe chargée de la génération de signaux. 
 `GSignal::Instance()->sinus();`
 
-GSignal peut générer plusieurs types de signaux.
+**GSignal** peut générer plusieurs types de signaux.
 ```
 public:
     void sinus(); //signal sinus
