@@ -4,7 +4,7 @@ Un **Signal** est une grandeur qui peut varier dans le temps.
 
 # Programme de Test
 
-**GProcess** est la classe chargée de l'exécution du programme principale.
+**GProcess** est la classe chargée de l'exécution du programme principal.
 ```
 //===============================================
 void GProcess::run() {
@@ -25,8 +25,10 @@ void GProcess::run() {
 //===============================================
 ```
 
-Les signaux développés :
+**GSignal** est la classe chargée de la génération de signaux. 
+`GSignal::Instance()->sinus();`
 
+GSignal peut générer plusieurs types de signaux.
 ```
 public:
     void sinus(); //signal sinus
@@ -39,55 +41,38 @@ public:
     void polynomial(); // signal polynôme
 ```
 
-La génération d'un signal :  
-
-**GSignal** est la classe chargée de la génération de signaux. 
-`GSignal::Instance()->sinus();`
-
 # Signal Sinus
-
-Le signal sinus :
 
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/sinus.png)
 
 # Signal Cosinus
 
-Le signal cosinus :
-
 ![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/cosinus.png)
 
 # Signal Mono-Alternance
-
-Le signal mono-alternance :
 
 ![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/halfwave.png)
 
 # Signal Double-Alternance
 
-Le signal double-alternance :
-
 ![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/fullwave.png)
 
 # Signal Carré
-
-Le signal carré :
 
 ![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/square.png)
 
 # Signal Triangle
 
-Le signal triangle :
-
 ![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/triangle.png)
 
 # Signal Dent de Scie
-
-Le signal dent de scie :
 
 ![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/sawtooth.png)
 
 # Signal Polynôme
 
-Le signal polynôme :
-
 ![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Signal/img/polynomial.png)
+
+# Voir Aussi
+
+[Suivant : Fourier DFT](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  

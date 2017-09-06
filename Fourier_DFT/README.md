@@ -83,4 +83,4 @@ GFourier::Instance()->harmonic();
 # Voir Aussi
 
 [Précédent : Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
-[Suivant : Fourier FFT](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Fourier FFT)")  
+[Suivant : Fourier FFT](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Fourier FFT")  
