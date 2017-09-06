@@ -8,7 +8,7 @@ La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée a
 
 # Programme de Test
 
-**GProcess** est la classe chargée de l'exécution du programme principale.
+**GProcess** est la classe chargée de l'exécution du programme principal.
 ```
 //===============================================
 void GProcess::run() {
