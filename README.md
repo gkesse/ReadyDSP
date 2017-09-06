@@ -11,7 +11,7 @@ Avec à la fois des compétences en Systèmes Embarqués et en Robotique.
 
 # ReadyDSP
 
-**ReadyDSP** est une bibliothèque de fonctions C++ pour le Traitement Numérique du Signal.  
+**ReadyDSP** est une bibliothèque de fonctions C++ pour le Traitement du Signal Numérique.  
 C'est une bibliothèque développée en C++ et maintenu par 
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
