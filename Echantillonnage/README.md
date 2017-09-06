@@ -40,7 +40,7 @@ void GProcess::run() {
 
 L'échantillonnage d'un signal :  
 
-**GSampling** est la classe chargée de l'échantillonnage de signaux. 
+**GSampling** est la classe chargée de l'échantillonnage de signaux.  
 `GSampling::Instance()->run();`
 
 # Signal Sinus

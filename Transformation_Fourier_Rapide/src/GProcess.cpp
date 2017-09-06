@@ -7,7 +7,7 @@
 GProcess* GProcess::m_instance = 0;
 //===============================================
 GProcess::GProcess(QObject *parent) :
-QObject(parent) {
+    QObject(parent) {
 
 }
 //===============================================
@@ -24,13 +24,18 @@ GProcess* GProcess::Instance() {
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->sinus();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xmin = GSignal::Instance()->getXmin();
     double m_xmax = GSignal::Instance()->getXmax();
     double m_ymin = GSignal::Instance()->getYmin();
     double m_ymax = GSignal::Instance()->getYmax();
+
+    GSampling::Instance()->setX(m_x);
+    GSampling::Instance()->setY(m_y);
+    GSampling::Instance()->run();
+    QVector<double> m_xSamp = GSampling::Instance()->getX();
+    QVector<double> m_ySamp = GSampling::Instance()->getY();
 
     GFourier::Instance()->setData(m_y);
     GFourier::Instance()->dft();
