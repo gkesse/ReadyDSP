@@ -4,7 +4,7 @@ La **Transformée de Fourier** est la technique qui permet de calculer le spectre
 Le spectre d'un signal est la représentation des intensités des sinusoïdes
 contenues dans le signal en fonction de leurs fréquences. 
 
-La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée aux un signaux discrets.
+La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée aux signaux discrets.
 
 # Programme de Test
 
