@@ -74,4 +74,4 @@ void GProcess::run() {
 # Voir Aussi
 
 [Précédent : Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
-[Suivant : Fourier DFT](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Fourier DFT")  
+[Suivant : Transformée de Fourier Discrète](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Transformée de Fourier Discrète")  

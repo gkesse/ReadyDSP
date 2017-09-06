@@ -75,4 +75,4 @@ public:
 
 # Voir Aussi
 
-[Suivant : Fourier DFT](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
+[Suivant : Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
