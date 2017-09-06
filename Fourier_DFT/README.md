@@ -79,3 +79,8 @@ GFourier::Instance()->harmonic();
 # Signal Polynôme
 
 ![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/polynomial.png)
+
+# Voir Aussi
+
+[Précédent : Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")
+[Suivant : Fourier FFT](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Fourier FFT)")
