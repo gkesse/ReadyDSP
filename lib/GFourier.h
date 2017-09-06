@@ -17,6 +17,12 @@ public:
 
 public:
     void setData(const QVector<double>& data);
+    QVector<double> getXHarm() const;
+    QVector<double> getYHarm() const;
+    double getXmin() const;
+    double getXmax() const;
+    double getYmin() const;
+    double getYmax() const;
 
 public:
     void dft(const int& isign = 1);
@@ -25,7 +31,12 @@ public:
 private:
     static GFourier* m_instance;
     QVector<double> m_data;
-    QVector<double> m_harm;
+    QVector<double> m_xHarm;
+    QVector<double> m_yHarm;
+    double m_xMin;
+    double m_xMax;
+    double m_yMin;
+    double m_yMax;
 };
 
 #endif

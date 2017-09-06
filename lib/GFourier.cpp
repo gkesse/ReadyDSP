@@ -32,6 +32,30 @@ void GFourier::setData(const QVector<double>& data) {
     }
 }
 //===============================================
+QVector<double> GFourier::getXHarm() const {
+    return m_xHarm;
+}
+//===============================================
+QVector<double> GFourier::getYHarm() const {
+    return m_yHarm;
+}
+//===============================================
+double GFourier::getXmin() const {
+    return m_xMin;
+}
+//===============================================
+double GFourier::getXmax() const {
+    return m_xMax;
+}
+//===============================================
+double GFourier::getYmin() const {
+    return m_yMin;
+}
+//===============================================
+double GFourier::getYmax() const {
+    return m_yMax + 0.1*m_yMax;
+}
+//===============================================
 void GFourier::dft(const int &isign) {
     ulong nn = m_data.size()/2;
     ulong n,mmax,m,j,istep,i;
@@ -80,16 +104,21 @@ void GFourier::dft(const int &isign) {
 //===============================================
 void GFourier::harmonic() {
     int N = m_data.size()/2;
-    m_harm.resize(N);
+    m_xHarm.resize(N);
+    m_yHarm.resize(N);
+    m_yMax = 0;
 
     for(int i = 0; i < N; i++) {
         double ai = m_data[2*i];
         double bi = m_data[2*i + 1];
         double di = qSqrt(ai*ai + bi*bi);
-        m_harm[i] = di;
-        QString m_format = QString("%1 : (%2 ; %3) : %4")
-                .arg(i).arg(ai).arg(bi).arg(di);
-        GMessageView::Instance()->showData(m_format);
+        m_xHarm[i] = i;
+        m_yHarm[i] = di;
+        if(m_yMax < di) m_yMax = di;
     }
+
+    m_xMin = 0;
+    m_xMax = N;
+    m_yMin = 0;
 }
 //===============================================
