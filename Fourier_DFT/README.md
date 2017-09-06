@@ -47,46 +47,46 @@ L'échantillonnage d'un signal :
 
 Le signal sinus :
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/sinus.png)
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/sinus.png)
 
 # Signal Cosinus
 
 Le signal cosinus :
 
-![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/cosinus.png)
+![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/cosinus.png)
 
 # Signal Mono-Alternance
 
 Le signal mono-alternance :
 
-![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/halfwave.png)
+![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/halfwave.png)
 
 # Signal Double-Alternance
 
 Le signal double-alternance :
 
-![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/fullwave.png)
+![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/fullwave.png)
 
 # Signal Carré
 
 Le signal carré :
 
-![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/square.png)
+![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/square.png)
 
 # Signal Triangle
 
 Le signal triangle :
 
-![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/triangle.png)
+![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/triangle.png)
 
 # Signal Dent de Scie
 
 Le signal dent de scie :
 
-![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/sawtooth.png)
+![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/sawtooth.png)
 
 # Signal Polynôme
 
 Le signal polynôme :
 
-![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Echantillonnage/img/polynomial.png)
+![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/polynomial.png)
