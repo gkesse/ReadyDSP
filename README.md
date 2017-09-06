@@ -29,4 +29,6 @@ Le développement de la bibliothèque **ReadyDSP** a nécessité les technologies su
 * IDE : **Visual Studio**
 * Outil de Construction : **NMake, Cygwin**
 * Editeur de Texte : **Notepad++**
+* Interface Homme-Machine : **Qt++**
+* Patron de Conception : **Singleton++**
 * Cible : **Windows, UNIX**
