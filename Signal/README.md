@@ -8,7 +8,7 @@ Un **Signal** est une grandeur qui peut varier dans le temps.
 ```
 //===============================================
 void GProcess::run() {
-    GSignal::Instance()->polynomial();
+    GSignal::Instance()->sinus();
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xMin = GSignal::Instance()->getXmin();
@@ -75,4 +75,7 @@ public:
 
 # Voir Aussi
 
-[Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
+* [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
+* [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
+* [Transformée de Fourier Discrète](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Transformée de Fourier Discrète")  
+* [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
