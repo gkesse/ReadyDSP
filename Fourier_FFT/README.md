@@ -1,10 +1,11 @@
-# Transformée de Fourier Discrète (DFT)
+# Transformée de Fourier Rapide (FFT)
 
 La **Transformée de Fourier** est la technique qui permet de calculer le spectre d'un signal.  
 Le spectre d'un signal est la représentation des intensités des sinusoïdes
 contenues dans le signal en fonction de leurs fréquences. 
 
-La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée aux signaux discrets.
+La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée aux signaux discrets.  
+La **Transformée de Fourier Rapide** est l'algorithme utilisé pour le calcul de la **Transformée de Fourier Discrète**.
 
 # Programme de Test
 
