@@ -84,25 +84,25 @@ GInterPol::Instance()->coefficient();
 ![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/cosinus.png) 
 ![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/cosinus2.png) 
 
-# Signal Sinus
+# Signal Mono-Alternance
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/halfwave.png) 
+![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/halfwave2.png) 
 
-# Signal Sinus
+# Signal Double-Alternance
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/fullwave.png) 
+![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/fullwave2.png) 
 
-# Signal Sinus
+# Signal Carré
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/square.png) 
+![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/square2.png) 
 
-# Signal Sinus
+# Signal Triangle
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/triangle.png) 
+![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/triangle2.png) 
 
 # Signal Sinus
 
