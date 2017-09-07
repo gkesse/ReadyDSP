@@ -9,9 +9,9 @@ Il en existe plusieurs types :
 * Interpolation cubique
 * Interpolation polynomiale
 
-L'**Interpolation** est modélisée par des fonctions définies par tronçon dans les cas 
+L'**Interpolation** est modélisée par plusieurs fonctions définies par tronçon dans les cas 
 de l'Interpolation linéaire, l'Interpolation cosinus et l'Interpolation cubique.
-Alors que l'**Interpolation** est modélisée par une fonction complête dans le cas 
+Alors que l'**Interpolation** est modélisée par une fonction unique dans le cas 
 l'Interpolation polynomiale.
 
 # Programme de Test
