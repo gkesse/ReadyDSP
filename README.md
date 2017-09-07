@@ -18,7 +18,6 @@ C'est une bibliothèque développée en C++ et maintenu par
 Les concepts abordées :  
 * [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
 * [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
-* [Transformée de Fourier Discrète](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_DFT "Transformée de Fourier Discrète")  
 * [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
 
 # Technologies
