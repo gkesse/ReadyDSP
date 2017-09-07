@@ -104,20 +104,15 @@ GInterPol::Instance()->coefficient();
 ![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/triangle.png) 
 ![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/triangle2.png) 
 
-# Signal Sinus
+# Signal Dent de Scie
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sawtooth.png) 
+![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sawtooth2.png) 
 
-# Signal Sinus
+# Signal Polynôme
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
-
-# Signal Sinus
-
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
+![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png) 
+![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial2.png) 
 
 # Voir Aussi
 
