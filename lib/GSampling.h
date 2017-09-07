@@ -22,7 +22,7 @@ public:
     QVector<double> getY() const;
 
 public:
-    void run(const int& N = 5);
+    void sample(const int& N = 5);
 
 private:
     static GSampling* m_instance;

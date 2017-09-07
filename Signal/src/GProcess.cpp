@@ -23,7 +23,6 @@ GProcess* GProcess::Instance() {
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->sinus();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xMin = GSignal::Instance()->getXmin();

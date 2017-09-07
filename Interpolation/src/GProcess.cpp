@@ -34,7 +34,7 @@ void GProcess::run() {
 
     GSampling::Instance()->setX(m_x);
     GSampling::Instance()->setY(m_y);
-    GSampling::Instance()->run(3);
+    GSampling::Instance()->sample(3);
     QVector<double> m_xSamp = GSampling::Instance()->getX();
     QVector<double> m_ySamp = GSampling::Instance()->getY();
 
