@@ -46,10 +46,14 @@ void GProcess::run() {
     QVector<double> m_xInter = GInterPol::Instance()->getX();
     QVector<double> m_yInter = GInterPol::Instance()->getY();
 
-    GGraphView::Instance()->setColor(QBrush("green"));
-    GGraphView::Instance()->setData(m_xInter, m_yInter);
+    GGraphView::Instance()->setColor(QBrush("blue"));
+    GGraphView::Instance()->setData(m_x, m_y);
     GGraphView::Instance()->setXRange(m_xMin, m_xMax);
     GGraphView::Instance()->setYRange(m_yMin, m_yMax);
+    GGraphView::Instance()->drawGraph();
+
+    GGraphView::Instance()->setColor(QBrush("green"));
+    GGraphView::Instance()->setData(m_xInter, m_yInter);
     GGraphView::Instance()->drawGraph();
 
     GGraphView::Instance()->setColor(QBrush("red"));
