@@ -4,7 +4,7 @@ L'**Intégration** est la technique qui consiste à calculer l'intégrale d'une fon
 
 # Intégration Numérique
 
-* **Formule de Quadrature de Gauss**
+* **Méthode de Gauss-Legendre**
 
 En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
 
