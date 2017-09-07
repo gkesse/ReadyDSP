@@ -22,7 +22,7 @@ En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire :
 
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
 
-Le polynôme résultant est de degré `N - 1`.
+Le polynôme d'interpolation est de degré `N - 1`.
 
 # Programme de Test
 
