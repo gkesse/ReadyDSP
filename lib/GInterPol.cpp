@@ -3,8 +3,6 @@
 #include "GMessageView.h"
 #include <QtMath>
 //===============================================
-#define SWAP(a,b) tempr=(a);(a)=(b);(b)=tempr
-//===============================================
 GInterPol* GInterPol::m_instance = 0;
 //===============================================
 GInterPol::GInterPol(QObject *parent) :
@@ -39,10 +37,10 @@ QVector<double> GInterPol::getY() const {
     return m_yInter;
 }
 //===============================================
-void GInterPol::polynomial() {
+void GInterPol::compute() {
     double tmin = m_xData.first();
     double tmax = m_xData.last();
-    int Npow = 5;
+    int Npow = 8;
     int Nmax = (int)qPow(2.0, (double)Npow) + 1;
     double Te = (tmax - tmin)/(Nmax - 1);
     m_xInter.resize(Nmax);
@@ -50,45 +48,52 @@ void GInterPol::polynomial() {
 
     for(int i = 0; i < Nmax; i++) {
         double xi = tmin + i*Te;
-        double yi = polynomial(xi);
+        double yi = compute(xi);
         m_xInter[i] = xi;
         m_yInter[i] = yi;
-        QString m_format = QString("%1 : %2 : %3")
-                .arg(i).arg(xi).arg(yi);
-        GMessageView::Instance()->showData(m_format);
     }
 }
 //===============================================
-double GInterPol::polynomial(const double& x) {
-    int i,m,ns=1;
-    double den,dif,dift,ho,hp,w;
-    double y;
-    double dy;
-    int n = m_xData.size();
-    QVector<double> c(n),d(n);
+double GInterPol::compute(const double& x) {
+    int N = m_Coef.size();
+    double y = 0.0;
 
-    dif=fabs(x - m_xData[1]);
-    for (i=1;i<=n;i++) {
-        if ( (dift=fabs(x-m_xData[i])) < dif) {
-            ns=i;
-            dif=dift;
-        }
-        c[i]=m_yData[i];
-        d[i]=m_yData[i];
+    for(int i = 0; i < N; i++) {
+        double ci = m_Coef[i];
+        if(ci == 0) continue;
+        double xi = qPow(x, (double)i);
+        double yi = ci*xi;
+        y += yi;
     }
-    y=m_yData[ns--];
-    for (m=1;m<n;m++) {
-        for (i=1;i<=n-m;i++) {
-            ho=m_xData[i]-x;
-            hp=m_xData[i+m]-x;
-            w=c[i+1]-d[i];
-            if ( (den=ho-hp) == 0.0) return NAN;
-            den=w/den;
-            d[i]=hp*den;
-            c[i]=ho*den;
-        }
-        y += (dy=(2*ns < (n-m) ? c[ns+1] : d[ns--]));
-    }
+
     return y;
+}
+//===============================================
+void GInterPol::polynomial() {
+    int k,j,i;
+    double phi,ff,b;
+    int n = m_xData.size();
+    QVector<double> s(n);
+    m_Coef.resize(n);
+
+    for (i=0;i<=n-1;i++) s[i]=m_Coef[i]=0.0;
+    s[n-1] = -m_xData[0];
+    for (i=1;i<=n-1;i++) {
+        for (j=n-1-i;j<=n-1-1;j++)
+            s[j] -= m_xData[i]*s[j+1];
+        s[n-1] -= m_xData[i];
+    }
+    for (j=0;j<=n-1;j++) {
+        phi=n-1+1;
+        for (k=n-1;k>=1;k--)
+            phi=k*s[k]+m_xData[j]*phi;
+        ff=m_yData[j]/phi;
+        b=1.0;
+
+        for (k=n-1;k>=0;k--) {
+            m_Coef[k] += b*ff;
+            b=s[k]+m_xData[j]*b;
+        }
+    }
 }
 //===============================================

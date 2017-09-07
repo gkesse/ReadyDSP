@@ -11,24 +11,17 @@ Il en existe plusieurs types :
 
 L'**Interpolation** est modélisée par plusieurs fonctions définies par tronçon dans les cas 
 de l'Interpolation linéaire, l'Interpolation cosinus et l'Interpolation cubique.
-Alors que l'**Interpolation** est modélisée par une fonction unique dans le cas 
-l'Interpolation polynomiale.
+Alors qu'elle est modélisée par une fonction unique dans le cas l'Interpolation polynomiale.
 
 # Interpolation Polynomiale
 
-* **Formule de Lagrange**
+* **Coéfficients du Polynôme d'Interpolation**
 
 En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/lagrange.png)
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynome.png)
 
 Le polynôme résultant est de degré `N - 1`.
-
-* **Formule de Neville**
-
-En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
-
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/neville.png)
 
 # Programme de Test
 

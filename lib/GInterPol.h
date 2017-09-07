@@ -22,8 +22,9 @@ public:
     QVector<double> getY() const;
 
 public:
+    void compute();
+    double compute(const double &x);
     void polynomial();
-    double polynomial(const double& x);
 
 private:
     static GInterPol* m_instance;
@@ -31,6 +32,7 @@ private:
     QVector<double> m_yData;
     QVector<double> m_xInter;
     QVector<double> m_yInter;
+    QVector<double> m_Coef;
 };
 
 #endif
