@@ -2,7 +2,7 @@
 #include "GProcess.h"
 #include "GSignal.h"
 #include "GSampling.h"
-#include "GFourier.h"
+#include "GInterPol.h"
 #include "GGraphView.h"
 //===============================================
 GProcess* GProcess::m_instance = 0;
@@ -24,29 +24,34 @@ GProcess* GProcess::Instance() {
 }
 //===============================================
 void GProcess::run() {
-    GSignal::Instance()->polynomial();
+    GSignal::Instance()->sinus();
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
+    double m_xMin = GSignal::Instance()->getXmin();
+    double m_xMax = GSignal::Instance()->getXmax();
+    double m_yMin = GSignal::Instance()->getYmin();
+    double m_yMax = GSignal::Instance()->getYmax();
 
     GSampling::Instance()->setX(m_x);
     GSampling::Instance()->setY(m_y);
-    GSampling::Instance()->run();
+    GSampling::Instance()->run(4);
+    QVector<double> m_xSamp = GSampling::Instance()->getX();
     QVector<double> m_ySamp = GSampling::Instance()->getY();
 
-    GFourier::Instance()->setData(m_ySamp);
-    GFourier::Instance()->dft();
-    GFourier::Instance()->harmonic();
-    QVector<double> m_xHarm = GFourier::Instance()->getXHarm();
-    QVector<double> m_yHarm = GFourier::Instance()->getYHarm();
-    double m_xMin = GFourier::Instance()->getXmin();
-    double m_xMax = GFourier::Instance()->getXmax();
-    double m_yMin = GFourier::Instance()->getYmin();
-    double m_yMax = GFourier::Instance()->getYmax();
+    GInterPol::Instance()->setX(m_xSamp);
+    GInterPol::Instance()->setY(m_ySamp);
+    GInterPol::Instance()->polynomial();
+    QVector<double> m_xInter = GInterPol::Instance()->getX();
+    QVector<double> m_yInter = GInterPol::Instance()->getY();
 
-    GGraphView::Instance()->setColor(QBrush("red"));
-    GGraphView::Instance()->setData(m_xHarm, m_yHarm);
+    GGraphView::Instance()->setColor(QBrush("green"));
+    GGraphView::Instance()->setData(m_xInter, m_yInter);
     GGraphView::Instance()->setXRange(m_xMin, m_xMax);
     GGraphView::Instance()->setYRange(m_yMin, m_yMax);
-    GGraphView::Instance()->drawSample();
+    GGraphView::Instance()->drawGraph();
+
+    GGraphView::Instance()->setColor(QBrush("red"));
+    GGraphView::Instance()->setData(m_xSamp, m_ySamp);
+    GGraphView::Instance()->drawPoint();
 }
 //===============================================

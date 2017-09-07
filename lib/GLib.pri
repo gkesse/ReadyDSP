@@ -10,7 +10,8 @@ SOURCES += \
     $$PWD/GAverage.cpp \
     $$PWD/GMinMax.cpp \
     $$PWD/GFourier.cpp \
-    $$PWD/GSampling.cpp
+    $$PWD/GSampling.cpp \
+    $$PWD/GInterPol.cpp
 
 HEADERS += \
     $$PWD/GSignal.h \
@@ -19,7 +20,8 @@ HEADERS += \
     $$PWD/GAverage.h \
     $$PWD/GMinMax.h \
     $$PWD/GFourier.h \
-    $$PWD/GSampling.h
+    $$PWD/GSampling.h \
+    $$PWD/GInterPol.h
 
 RESOURCES += \
     $$PWD/resource.qrc

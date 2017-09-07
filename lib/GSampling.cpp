@@ -39,8 +39,7 @@ QVector<double> GSampling::getY() const {
     return m_ySamp;
 }
 //===============================================
-void GSampling::run() {
-    int N = 5;
+void GSampling::run(const int& N) {
     int Nmax = (int)qPow(2.0, (double)N);
     int Dmax = m_xData.size();
     int Ne = Dmax/Nmax;

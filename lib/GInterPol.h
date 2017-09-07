@@ -1,19 +1,19 @@
 //===============================================
-#ifndef _GSampling_
-#define _GSampling_
+#ifndef _GInterPol_
+#define _GInterPol_
 //===============================================
 #include <QObject>
 #include <QVector>
 //===============================================
-class GSampling : public QObject {
+class GInterPol : public QObject {
     Q_OBJECT
 
 private:
-    GSampling(QObject* parent = 0);
+    GInterPol(QObject* parent = 0);
 
 public:
-    ~GSampling();
-    static GSampling* Instance();
+    ~GInterPol();
+    static GInterPol* Instance();
 
 public:
     void setX(const QVector<double>& x);
@@ -22,14 +22,15 @@ public:
     QVector<double> getY() const;
 
 public:
-    void run(const int& N = 5);
+    void polynomial();
+    double polynomial(const double& x);
 
 private:
-    static GSampling* m_instance;
+    static GInterPol* m_instance;
     QVector<double> m_xData;
     QVector<double> m_yData;
-    QVector<double> m_xSamp;
-    QVector<double> m_ySamp;
+    QVector<double> m_xInter;
+    QVector<double> m_yInter;
 };
 
 #endif

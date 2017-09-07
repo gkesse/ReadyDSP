@@ -31,6 +31,7 @@ public:
 public:
     void drawGraph();
     void drawSample();
+    void drawPoint();
 
 private:
     static GGraphView* m_instance;

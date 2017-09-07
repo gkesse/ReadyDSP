@@ -14,6 +14,12 @@ de l'Interpolation linéaire, l'Interpolation cosinus et l'Interpolation cubique.
 Alors que l'**Interpolation** est modélisée par une fonction unique dans le cas 
 l'Interpolation polynomiale.
 
+# Interpolation Polynomiale
+
+* **Formule de Lagrange**
+
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/lagrange.png)
+
 # Programme de Test
 
 **GProcess** est la classe chargée de l'exécution du programme de test.

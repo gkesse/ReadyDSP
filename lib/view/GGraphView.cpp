@@ -62,4 +62,14 @@ void GGraphView::drawSample() {
     ui->m_graph->yAxis->setRange(m_yMin, m_yMax);
 }
 //===============================================
+void GGraphView::drawPoint() {
+    ui->m_graph->addGraph();
+    ui->m_graph->graph()->setLineStyle(QCPGraph::lsNone);
+    ui->m_graph->graph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
+    ui->m_graph->graph()->setPen(QPen(m_color, 1));
+    ui->m_graph->graph()->setData(m_xData, m_yData);
+    ui->m_graph->xAxis->setRange(m_xMin, m_xMax);
+    ui->m_graph->yAxis->setRange(m_yMin, m_yMax);
+}
+//===============================================
 
