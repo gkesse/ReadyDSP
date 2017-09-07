@@ -1,10 +1,18 @@
-# Transformée de Fourier Discrète (DFT)
+# Interpolation
 
-La **Transformée de Fourier** est la technique qui permet de calculer le spectre d'un signal.  
-Le spectre d'un signal est la représentation des intensités des sinusoïdes
-contenues dans le signal en fonction de leurs fréquences. 
+L'**Interpolation** est la technique qui permet de construire une courbe à partir de la donnée 
+d'un nombre fini de points.
 
-La **Transformée de Fourier Discrète** est la Transformée de Fourier appliquée aux signaux discrets.
+Il en existe plusieurs types :
+* Interpolation linéaire
+* Interpolation cosinus
+* Interpolation cubique
+* Interpolation polynomiale
+
+L'**Interpolation** est modélisée par des fonctions définies par tronçon dans les cas 
+de l'Interpolation linéaire, l'Interpolation cosinus et l'Interpolation cubique.
+Alors que l'**Interpolation** est modélisée par une fonction complête dans le cas 
+l'Interpolation polynomiale.
 
 # Programme de Test
 
@@ -81,5 +89,7 @@ GFourier::Instance()->harmonic();
 
 # Voir Aussi
 
-[Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
-[Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
+* [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
+* [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
+* [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
+* [Interpolation](https://github.com/gkesse/ReadyDSP/tree/master/Interpolation "Interpolation")  

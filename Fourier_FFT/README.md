@@ -85,3 +85,4 @@ GFourier::Instance()->harmonic();
 * [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
 * [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
 * [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
+* [Interpolation](https://github.com/gkesse/ReadyDSP/tree/master/Interpolation "Interpolation")  
