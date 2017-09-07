@@ -1,7 +1,14 @@
 # Intégration
 
-L'**Intégration** est la technique qui consiste à prélever les valeurs d'un signal 
-à intervalles de temps réguliers.  
+L'**Intégration** est la technique qui consiste à calculer l'intégrale d'une fonction. 
+
+# Intégration Numérique
+
+* **Formule de Quadrature de Gauss**
+
+En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
+
+![Formule](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
 
 # Programme de Test
 

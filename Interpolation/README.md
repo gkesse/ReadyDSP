@@ -20,7 +20,7 @@ Alors qu'elle est modélisée par une fonction unique dans le cas l'Interpolation 
 
 En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
+![Formule](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
 
 Le polynôme d'interpolation est de degré `N - 1`.
 
