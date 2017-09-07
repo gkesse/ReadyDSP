@@ -30,5 +30,6 @@ Le développement de la bibliothèque **ReadyDSP** a nécessité les technologies su
 * Outil de Construction : **NMake, Cygwin**
 * Editeur de Texte : **Notepad++**
 * Interface Homme-Machine : **Qt**
+* Traçage de courbe 2D : **QCustomPlot**
 * Patron de Conception : **Singleton++**
 * Cible : **Windows, UNIX**
