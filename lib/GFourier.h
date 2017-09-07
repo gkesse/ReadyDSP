@@ -25,7 +25,7 @@ public:
     double getYmax() const;
 
 public:
-    void dft(const int& isign = 1);
+    void fft(const int& isign = 1);
     void harmonic();
 
 private:
