@@ -23,7 +23,7 @@ void GProcess::run() {
     QVector<double> m_ySamp = GSampling::Instance()->getY();
 
     GFourier::Instance()->setData(m_ySamp);
-    GFourier::Instance()->dft();
+    GFourier::Instance()->fft();
     GFourier::Instance()->harmonic();
     QVector<double> m_xHarm = GFourier::Instance()->getXHarm();
     QVector<double> m_yHarm = GFourier::Instance()->getYHarm();
@@ -44,7 +44,7 @@ void GProcess::run() {
 **GFourier** est la classe chargée du calcul de la Transformée de Fourier Discrète.  
 ```
 GFourier::Instance()->setData(m_ySamp);
-GFourier::Instance()->dft();
+GFourier::Instance()->fft();
 GFourier::Instance()->harmonic();
 ```
 

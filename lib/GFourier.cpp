@@ -56,7 +56,7 @@ double GFourier::getYmax() const {
     return m_yMax + 0.1*m_yMax;
 }
 //===============================================
-void GFourier::dft(const int &isign) {
+void GFourier::fft(const int &isign) {
     ulong nn = m_data.size()/2;
     ulong n,mmax,m,j,istep,i;
     double wtemp,wr,wpr,wpi,wi,theta;
