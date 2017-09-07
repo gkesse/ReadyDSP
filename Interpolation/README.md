@@ -18,6 +18,7 @@ l'Interpolation polynomiale.
 
 * **Formule de Lagrange**
 
+En considérant N points donnés (xi, yi), nous pouvons écrire :  
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/lagrange.png)
 
 # Programme de Test
