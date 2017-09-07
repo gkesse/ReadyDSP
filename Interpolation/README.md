@@ -120,3 +120,4 @@ GInterPol::Instance()->coefficient();
 * [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
 * [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
 * [Interpolation](https://github.com/gkesse/ReadyDSP/tree/master/Interpolation "Interpolation")  
+* [Intégration](https://github.com/gkesse/ReadyDSP/tree/master/Integration "Intégration")  
