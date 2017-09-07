@@ -19,7 +19,7 @@ Alors qu'elle est modélisée par une fonction unique dans le cas l'Interpolation 
 
 En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynome.png)
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
 
 Le polynôme résultant est de degré `N - 1`.
 
@@ -67,34 +67,6 @@ GFourier::Instance()->harmonic();
 # Signal Sinus
 
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/sinus.png)
-
-# Signal Cosinus
-
-![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/cosinus.png)
-
-# Signal Mono-Alternance
-
-![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/halfwave.png)
-
-# Signal Double-Alternance
-
-![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/fullwave.png)
-
-# Signal Carré
-
-![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/square.png)
-
-# Signal Triangle
-
-![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/triangle.png)
-
-# Signal Dent de Scie
-
-![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/sawtooth.png)
-
-# Signal Polynôme
-
-![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/polynomial.png)
 
 # Voir Aussi
 
