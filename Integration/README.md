@@ -1,6 +1,6 @@
 # Intégration
 
-L'**Echantillonnage** est la technique qui consiste à prélever les valeurs d'un signal 
+L'**Intégration** est la technique qui consiste à prélever les valeurs d'un signal 
 à intervalles de temps réguliers.  
 
 # Programme de Test
@@ -77,6 +77,7 @@ GSampling::Instance()->sample();
 
 # Voir Aussi
 
+* [ReadyDSP](https://github.com/gkesse/ReadyDSP "ReadyDSP")  
 * [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
 * [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
 * [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
