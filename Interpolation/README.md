@@ -22,6 +22,14 @@ En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire :
 
 ![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/lagrange.png)
 
+Le polynôme résultant est de degré `N - 1`.
+
+* **Formule de Neville**
+
+En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
+
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/neville.png)
+
 # Programme de Test
 
 **GProcess** est la classe chargée de l'exécution du programme de test.
