@@ -8,7 +8,7 @@ L'**Intégration** est la technique qui consiste à calculer l'intégrale d'une fon
 
 En considérant `N` points donnés `(xi, yi)`, nous pouvons écrire : 
 
-![Formule](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png)
+![Formule](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/formula.png)
 
 # Programme de Test
 
