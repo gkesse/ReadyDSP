@@ -111,8 +111,8 @@ GInterPol::Instance()->coefficient();
 
 # Signal Polynôme
 
-![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial.png) 
 ![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial2.png) 
+![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/polynomial3.png) 
 
 # Voir Aussi
 
