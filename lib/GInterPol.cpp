@@ -97,3 +97,18 @@ void GInterPol::polynomial() {
     }
 }
 //===============================================
+void GInterPol::coefficient() {
+    QString m_format = "";
+    m_format += "Coefficients of the Interpolating Polynomial :\n";
+    m_format += "====================================\n";
+    m_format += "y = c0 + c1*x + c2*x^2 + · · · + cN*x^N\n";
+    m_format += "====================================\n";
+
+    for(int i = 0; i < m_Coef.size(); i++) {
+        m_format += QString("c[%1] : %2\n").arg(i).arg(m_Coef[i]);
+    }
+
+    GMessageView::Instance()->showData(m_format);
+}
+//===============================================
+

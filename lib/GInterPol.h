@@ -25,6 +25,7 @@ public:
     void compute();
     double compute(const double &x);
     void polynomial();
+    void coefficient();
 
 private:
     static GInterPol* m_instance;

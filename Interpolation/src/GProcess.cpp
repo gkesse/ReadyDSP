@@ -34,7 +34,7 @@ void GProcess::run() {
 
     GSampling::Instance()->setX(m_x);
     GSampling::Instance()->setY(m_y);
-    GSampling::Instance()->run(4);
+    GSampling::Instance()->run(3);
     QVector<double> m_xSamp = GSampling::Instance()->getX();
     QVector<double> m_ySamp = GSampling::Instance()->getY();
 
@@ -42,6 +42,7 @@ void GProcess::run() {
     GInterPol::Instance()->setY(m_ySamp);
     GInterPol::Instance()->polynomial();
     GInterPol::Instance()->compute();
+    GInterPol::Instance()->coefficient();
     QVector<double> m_xInter = GInterPol::Instance()->getX();
     QVector<double> m_yInter = GInterPol::Instance()->getY();
 
@@ -53,8 +54,6 @@ void GProcess::run() {
 
     GGraphView::Instance()->setColor(QBrush("red"));
     GGraphView::Instance()->setData(m_xSamp, m_ySamp);
-    GGraphView::Instance()->setXRange(m_xMin, m_xMax);
-    GGraphView::Instance()->setYRange(m_yMin, m_yMax);
     GGraphView::Instance()->drawPoint();
 }
 //===============================================

@@ -57,16 +57,18 @@ void GProcess::run() {
 //===============================================
 ```
 
-**GFourier** est la classe chargée du calcul de la Transformée de Fourier Discrète.  
+**GInterPol** est la classe chargée du calcul de l'Interpolation.  
 ```
-GFourier::Instance()->setData(m_ySamp);
-GFourier::Instance()->dft();
-GFourier::Instance()->harmonic();
+GInterPol::Instance()->setX(m_xSamp);
+GInterPol::Instance()->setY(m_ySamp);
+GInterPol::Instance()->polynomial();
+GInterPol::Instance()->compute();
 ```
 
 # Signal Sinus
 
-![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Fourier_DFT/img/sinus.png)
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus.png) 
+![Signal Sinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Interpolation/img/sinus2.png) 
 
 # Voir Aussi
 
