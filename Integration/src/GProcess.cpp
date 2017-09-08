@@ -2,6 +2,7 @@
 #include "GProcess.h"
 #include "GSignal.h"
 #include "GSampling.h"
+#include "GIntegrate.h"
 #include "GGraphView.h"
 //===============================================
 GProcess* GProcess::m_instance = 0;
@@ -24,7 +25,6 @@ GProcess* GProcess::Instance() {
 //===============================================
 void GProcess::run() {
     GSignal::Instance()->sinus();
-
     QVector<double> m_x = GSignal::Instance()->getX();
     QVector<double> m_y = GSignal::Instance()->getY();
     double m_xMin = GSignal::Instance()->getXmin();
@@ -37,6 +37,9 @@ void GProcess::run() {
     GSampling::Instance()->sample();
     QVector<double> m_xSamp = GSampling::Instance()->getX();
     QVector<double> m_ySamp = GSampling::Instance()->getY();
+
+    GIntegrate::Instance()->integrate();
+    GIntegrate::Instance()->gaussLegendre();
 
     GGraphView::Instance()->setColor(QBrush("blue"));
     GGraphView::Instance()->setData(m_x, m_y);

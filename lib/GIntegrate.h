@@ -22,17 +22,15 @@ public:
     QVector<double> getY() const;
 
 public:
-    void compute();
-    double compute(const double &x);
-    void polynomial();
-    void coefficient();
+    void integrate();
+    void gaussLegendre();
 
 private:
     static GIntegrate* m_instance;
     QVector<double> m_xData;
     QVector<double> m_yData;
-    QVector<double> m_xInter;
-    QVector<double> m_yInter;
+    QVector<double> m_xParam;
+    QVector<double> m_wParam;
     QVector<double> m_Coef;
 };
 
