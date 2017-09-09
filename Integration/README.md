@@ -74,10 +74,12 @@ GIntegrate::Instance()->gaussLegendre();
 # Signal Double-Alternance
 
 ![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/fullwave.png)
+![Signal Double-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/fullwave2.png)
 
 # Signal Carré
 
 ![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/square.png)
+![Signal Carré](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/square2.png)
 
 # Signal Triangle
 

@@ -142,26 +142,22 @@ void GSignal::halfwave() {
 //===============================================
 void GSignal::fullwave() {
     double F = 50;
-    double W = 2*M_PI*F;
     double T = 1/F;
     double tmin = -1*T;
     double tmax = +1*T;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
-    int N = T/Te + 1;
 
-    m_paramMap.insert("ID", "fullwave");
+    m_paramMap.insert("ID", "halfwave");
+    m_paramMap.insert("F", F);
+    m_paramMap.insert("Vmax", Vmax);
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi;
-        if((i % N) < (N/2)) yi = Vmax*qSin(W*xi);
-        else yi = -Vmax*qSin(W*xi);
+        double xi = tmin + i*Te;
+        double yi = fullwave(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -373,18 +369,10 @@ double GSignal::halfwave(const double& x) {
 //===============================================
 double GSignal::fullwave(const double& x) {
     double F = m_paramMap.value("F").toDouble();
-    double Vmin = m_paramMap.value("Vmin").toDouble();
     double Vmax = m_paramMap.value("Vmax").toDouble();
-    double x0 = m_paramMap.value("tmin").toDouble();
 
-    double T = 1/F;
-    double dx = x - x0;
-    int xA = dx/T;
-    double xB = dx - xA*T;
-    double xT = T/2;
-    double y;
-    if(xB < xT) y = Vmax;
-    else y = Vmin;
+    double W = 2*M_PI*F;
+    double y = qAbs(Vmax*qSin(W*x));
     return y;
 }
 //===============================================
