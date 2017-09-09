@@ -11,8 +11,8 @@ SOURCES += \
     $$PWD/GMinMax.cpp \
     $$PWD/GFourier.cpp \
     $$PWD/GSampling.cpp \
-    $$PWD/GInterPol.cpp \
-    $$PWD/GIntegrate.cpp
+    $$PWD/GIntegrate.cpp \
+    $$PWD/GInterPol.cpp
 
 HEADERS += \
     $$PWD/GSignal.h \

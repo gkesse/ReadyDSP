@@ -21,7 +21,7 @@ public:
     double getMax() const;
 
 public:
-    void run();
+    void minMax();
 
 private:
     static GMinMax* m_instance;

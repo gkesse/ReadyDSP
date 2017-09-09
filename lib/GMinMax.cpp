@@ -33,7 +33,7 @@ double GMinMax::getMax() const {
     return m_max;
 }
 //===============================================
-void GMinMax::run() {
+void GMinMax::minMax() {
     m_min = m_data[0];
     m_max = m_data[0];
 

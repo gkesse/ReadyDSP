@@ -74,6 +74,7 @@ void GInterPol::polynomial() {
     double phi,ff,b;
     int n = m_xData.size();
     QVector<double> s(n);
+
     m_Coef.resize(n);
 
     for (i=0;i<=n-1;i++) s[i]=m_Coef[i]=0.0;

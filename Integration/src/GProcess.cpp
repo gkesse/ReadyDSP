@@ -2,13 +2,14 @@
 #include "GProcess.h"
 #include "GSignal.h"
 #include "GSampling.h"
+#include "GInterPol.h"
 #include "GIntegrate.h"
 #include "GGraphView.h"
 //===============================================
 GProcess* GProcess::m_instance = 0;
 //===============================================
 GProcess::GProcess(QObject *parent) :
-QObject(parent) {
+    QObject(parent) {
 
 }
 //===============================================
@@ -34,17 +35,33 @@ void GProcess::run() {
 
     GSampling::Instance()->setX(m_x);
     GSampling::Instance()->setY(m_y);
-    GSampling::Instance()->sample();
+    GSampling::Instance()->sample(4);
     QVector<double> m_xSamp = GSampling::Instance()->getX();
     QVector<double> m_ySamp = GSampling::Instance()->getY();
 
-    GIntegrate::Instance()->integrate();
+    GInterPol::Instance()->setX(m_xSamp);
+    GInterPol::Instance()->setY(m_ySamp);
+    GInterPol::Instance()->polynomial();
+    GInterPol::Instance()->compute();
+    GInterPol::Instance()->coefficient();
+    QVector<double> m_xInter = GInterPol::Instance()->getX();
+    QVector<double> m_yInter = GInterPol::Instance()->getY();
+
+    GIntegrate::Instance()->setX(m_x);
+    GIntegrate::Instance()->setY(m_y);
     GIntegrate::Instance()->gaussLegendre();
+    GIntegrate::Instance()->params();
+    QVector<double> m_xInteg = GIntegrate::Instance()->getX();
+    QVector<double> m_yInteg = GIntegrate::Instance()->getY();
 
     GGraphView::Instance()->setColor(QBrush("blue"));
-    GGraphView::Instance()->setData(m_x, m_y);
+    GGraphView::Instance()->setData(m_xInter, m_yInter);
     GGraphView::Instance()->setXRange(m_xMin, m_xMax);
     GGraphView::Instance()->setYRange(m_yMin, m_yMax);
+    GGraphView::Instance()->drawGraph();
+
+    GGraphView::Instance()->setColor(QBrush("green"));
+    GGraphView::Instance()->setData(m_xInteg, m_yInteg);
     GGraphView::Instance()->drawGraph();
 
     GGraphView::Instance()->setColor(QBrush("red"));

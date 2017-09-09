@@ -22,8 +22,9 @@ public:
     QVector<double> getY() const;
 
 public:
-    void integrate();
     void gaussLegendre();
+    void gaussLegendre(const double &x1, const double &x2, const int &n);
+    void params();
 
 private:
     static GIntegrate* m_instance;
@@ -31,7 +32,12 @@ private:
     QVector<double> m_yData;
     QVector<double> m_xParam;
     QVector<double> m_wParam;
-    QVector<double> m_Coef;
+    QVector<double> m_xInteg;
+    QVector<double> m_yInteg;
+    double m_xMin;
+    double m_xMax;
+    double m_yMin;
+    double m_yMax;
 };
 
 #endif
