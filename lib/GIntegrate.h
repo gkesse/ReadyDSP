@@ -20,6 +20,10 @@ public:
     void setY(const QVector<double>& y);
     QVector<double> getX() const;
     QVector<double> getY() const;
+    double getXmin() const;
+    double getXmax() const;
+    double getYmin() const;
+    double getYmax() const;
 
 public:
     void gaussLegendre();
@@ -38,6 +42,8 @@ private:
     double m_xMax;
     double m_yMin;
     double m_yMax;
+    double m_yBorder;
+    double m_yWidth;
 };
 
 #endif

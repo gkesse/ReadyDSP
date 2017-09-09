@@ -1,6 +1,6 @@
 //===============================================
 #include "GIntegrate.h"
-#include "GInterPol.h"
+#include "GSignal.h"
 #include "GMessageView.h"
 #include <QtMath>
 //===============================================
@@ -10,7 +10,7 @@ GIntegrate* GIntegrate::m_instance = 0;
 //===============================================
 GIntegrate::GIntegrate(QObject *parent) :
     QObject(parent) {
-
+    m_yBorder = 0.1;
 }
 //===============================================
 GIntegrate::~GIntegrate() {
@@ -40,10 +40,25 @@ QVector<double> GIntegrate::getY() const {
     return m_yInteg;
 }
 //===============================================
+double GIntegrate::getXmin() const {
+    return m_xMin;
+}
+//===============================================
+double GIntegrate::getXmax() const {
+    return m_xMax;
+}
+//===============================================
+double GIntegrate::getYmin() const {
+    return m_yMin - m_yBorder*m_yWidth;
+}
+//===============================================
+double GIntegrate::getYmax() const {
+    return m_yMax + m_yBorder*m_yWidth;
+}
+//===============================================
 void GIntegrate::gaussLegendre() {
     int N = m_xData.size();
     double x0 = m_xData[0];
-    double k = 314;
 
     m_xInteg.resize(N - 1);
     m_yInteg.resize(N - 1);
@@ -59,7 +74,7 @@ void GIntegrate::gaussLegendre() {
         for(int j = 0; j < i + 1; j++) {
             double xj = m_xParam[j];
             double wj = m_wParam[j];
-            double fj = GInterPol::Instance()->compute(xj);
+            double fj = GSignal::Instance()->signal(xj);
             double yj = wj*fj;
             yi += yj;
         }
@@ -73,7 +88,7 @@ void GIntegrate::gaussLegendre() {
 
     m_xMin = m_xInteg.first();
     m_xMax = m_xInteg.last();
-
+    m_yWidth = m_yMax - m_yMin;
 }
 //===============================================
 void GIntegrate::gaussLegendre(const double& x1, const double& x2, const int& n) {

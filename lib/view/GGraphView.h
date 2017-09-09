@@ -25,13 +25,13 @@ protected:
 public:
     void setColor(const QBrush& color);
     void setData(const QVector<double>& x, const QVector<double>& y);
-    void setXRange(const double& xMin, const double& xMax);
-    void setYRange(const double& yMin, const double& yMax);
+    void setXRange(const double& xMin, const double& xMax, const int& id = 0);
+    void setYRange(const double& yMin, const double& yMax, const int& id = 0);
 
 public:
-    void drawGraph();
-    void drawSample();
-    void drawPoint();
+    void drawGraph(const int& id = 0);
+    void drawSample(const int& id = 0);
+    void drawPoint(const int& id = 0);
 
 private:
     static GGraphView* m_instance;
@@ -39,10 +39,11 @@ private:
     QBrush m_color;
     QVector<double> m_xData;
     QVector<double> m_yData;
-    double m_xMin;
-    double m_xMax;
-    double m_yMin;
-    double m_yMax;
+    QVector<QCustomPlot*> m_graph;
+    QVector<double> m_xMin;
+    QVector<double> m_xMax;
+    QVector<double> m_yMin;
+    QVector<double> m_yMax;
 };
 //===============================================
 #endif

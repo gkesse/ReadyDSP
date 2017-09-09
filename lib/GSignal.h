@@ -4,6 +4,8 @@
 //===============================================
 #include <QObject>
 #include <QVector>
+#include <QMap>
+#include <QVariant>
 //===============================================
 class GSignal : public QObject {
     Q_OBJECT
@@ -33,6 +35,11 @@ public:
     void sawtooth();
     void polynomial();
 
+public:
+    double signal(const double& x);
+    double sinus(const double& x);
+    double square(const double& x);
+
 private:
     static GSignal* m_instance;
     QVector<double> m_x;
@@ -43,8 +50,9 @@ private:
     double m_yMax;
     double m_xWidth;
     double m_yWidth;
-    double m_border;
-
+    double m_yBorder;
+    QMap<QString, QVariant> m_paramMap;
+    int Npow;
 };
 
 #endif
