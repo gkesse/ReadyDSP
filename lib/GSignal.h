@@ -39,7 +39,12 @@ public:
     double signal(const double& x);
     double sinus(const double& x);
     double cosinus(const double& x);
+    double halfwave(const double& x);
+    double fullwave(const double& x);
     double square(const double& x);
+    double triangle(const double& x);
+    double sawtooth(const double& x);
+    double polynomial(const double& x);
 
 private:
     static GSignal* m_instance;

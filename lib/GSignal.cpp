@@ -111,26 +111,23 @@ void GSignal::cosinus() {
 //===============================================
 void GSignal::halfwave() {
     double F = 50;
-    double W = 2*M_PI*F;
     double T = 1/F;
     double tmin = -1*T;
     double tmax = +1*T;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
-    int N = T/Te + 1;
 
     m_paramMap.insert("ID", "halfwave");
+    m_paramMap.insert("F", F);
+    m_paramMap.insert("Vmax", Vmax);
+    m_paramMap.insert("tmin", tmin);
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi;
-        if((i % N) < (N/2)) yi = Vmax*qSin(W*xi);
-        else yi = 0;
+        double xi = tmin + i*Te;
+        double yi = halfwave(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -330,12 +327,12 @@ double GSignal::signal(const double& x) {
     double y;
     if(id == "sinus") y = sinus(x);
     else if(id == "cosinus") y = cosinus(x);
-    else if(id == "halfwave") y = square(x);
-    else if(id == "fullwave") y = square(x);
+    else if(id == "halfwave") y = halfwave(x);
+    else if(id == "fullwave") y = fullwave(x);
     else if(id == "square") y = square(x);
-    else if(id == "triangle") y = square(x);
-    else if(id == "sawtooth") y = square(x);
-    else if(id == "polynomial") y = square(x);
+    else if(id == "triangle") y = triangle(x);
+    else if(id == "sawtooth") y = sawtooth(x);
+    else if(id == "polynomial") y = polynomial(x);
     return y;
 }
 //===============================================
@@ -357,7 +354,92 @@ double GSignal::cosinus(const double& x) {
     return y;
 }
 //===============================================
+double GSignal::halfwave(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+    double x0 = m_paramMap.value("tmin").toDouble();
+
+    double W = 2*M_PI*F;
+    double T = 1/F;
+    double dx = x - x0;
+    int xA = dx/T;
+    double xB = dx - xA*T;
+    double xT = T/2;
+    double y;
+    if(xB < xT) y = Vmax*qSin(W*dx);
+    else y = 0;
+    return y;
+}
+//===============================================
+double GSignal::fullwave(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmin = m_paramMap.value("Vmin").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+    double x0 = m_paramMap.value("tmin").toDouble();
+
+    double T = 1/F;
+    double dx = x - x0;
+    int xA = dx/T;
+    double xB = dx - xA*T;
+    double xT = T/2;
+    double y;
+    if(xB < xT) y = Vmax;
+    else y = Vmin;
+    return y;
+}
+//===============================================
 double GSignal::square(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmin = m_paramMap.value("Vmin").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+    double x0 = m_paramMap.value("tmin").toDouble();
+
+    double T = 1/F;
+    double dx = x - x0;
+    int xA = dx/T;
+    double xB = dx - xA*T;
+    double xT = T/2;
+    double y;
+    if(xB < xT) y = Vmax;
+    else y = Vmin;
+    return y;
+}
+//===============================================
+double GSignal::triangle(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmin = m_paramMap.value("Vmin").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+    double x0 = m_paramMap.value("tmin").toDouble();
+
+    double T = 1/F;
+    double dx = x - x0;
+    int xA = dx/T;
+    double xB = dx - xA*T;
+    double xT = T/2;
+    double y;
+    if(xB < xT) y = Vmax;
+    else y = Vmin;
+    return y;
+}
+//===============================================
+double GSignal::sawtooth(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmin = m_paramMap.value("Vmin").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+    double x0 = m_paramMap.value("tmin").toDouble();
+
+    double T = 1/F;
+    double dx = x - x0;
+    int xA = dx/T;
+    double xB = dx - xA*T;
+    double xT = T/2;
+    double y;
+    if(xB < xT) y = Vmax;
+    else y = Vmin;
+    return y;
+}
+//===============================================
+double GSignal::polynomial(const double& x) {
     double F = m_paramMap.value("F").toDouble();
     double Vmin = m_paramMap.value("Vmin").toDouble();
     double Vmax = m_paramMap.value("Vmax").toDouble();

@@ -69,6 +69,7 @@ GIntegrate::Instance()->gaussLegendre();
 # Signal Mono-Alternance
 
 ![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/halfwave.png)
+![Signal Mono-Alternance](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/halfwave2.png)
 
 # Signal Double-Alternance
 
