@@ -84,14 +84,17 @@ GIntegrate::Instance()->gaussLegendre();
 # Signal Triangle
 
 ![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/triangle.png)
+![Signal Triangle](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/triangle2.png)
 
 # Signal Dent de Scie
 
 ![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/sawtooth.png)
+![Signal Dent de Scie](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/sawtooth2.png)
 
 # Signal Polynôme
 
 ![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/polynomial.png)
+![Signal Polynôme](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/polynomial2.png)
 
 # Voir Aussi
 
