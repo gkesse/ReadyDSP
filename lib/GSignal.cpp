@@ -149,7 +149,7 @@ void GSignal::fullwave() {
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
 
-    m_paramMap.insert("ID", "halfwave");
+    m_paramMap.insert("ID", "fullwave");
     m_paramMap.insert("F", F);
     m_paramMap.insert("Vmax", Vmax);
     m_x.resize(Nmax);
@@ -208,28 +208,24 @@ void GSignal::triangle() {
     double F = 50;
     double T = 1/F;
     double tmin = -1*T;
-    double tmax = +1*T;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    double tmax = 1*T;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmin = -1;
-    double Vmax = 1;
-    double A = 2*(Vmax - Vmin)/T;
-    int N = T/Te + 1;
+    double Vmax = +1;
 
     m_paramMap.insert("ID", "triangle");
+    m_paramMap.insert("F", F);
+    m_paramMap.insert("Vmin", Vmin);
+    m_paramMap.insert("Vmax", Vmax);
+    m_paramMap.insert("tmin", tmin);
+
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi;
-        double x0;
-        if((i % N) == 0) x0 = xi;
-        if((i % N) == (N/2)) x0 = xi;
-        if((i % N) < (N/2)) yi = A*(xi - x0) + Vmin;
-        else yi = -A*(xi - x0) + Vmax;
+        double xi = tmin + i*Te;
+        double yi = triangle(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -246,26 +242,24 @@ void GSignal::sawtooth() {
     double F = 50;
     double T = 1/F;
     double tmin = -1*T;
-    double tmax = +1*T;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    double tmax = 1*T;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmin = -1;
-    double Vmax = 1;
-    double A = (Vmax - Vmin)/T;
-    int N = T/Te + 1;
+    double Vmax = +1;
 
     m_paramMap.insert("ID", "sawtooth");
+    m_paramMap.insert("F", F);
+    m_paramMap.insert("Vmin", Vmin);
+    m_paramMap.insert("Vmax", Vmax);
+    m_paramMap.insert("tmin", tmin);
+
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi;
-        double x0;
-        if((i % N) == 0) x0 = xi;
-        yi = A*(xi - x0) + Vmin;
+        double xi = tmin + i*Te;
+        double yi = sawtooth(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -280,30 +274,26 @@ void GSignal::sawtooth() {
 //===============================================
 void GSignal::polynomial() {
     double A[] = {1.0/4, 3.0/4, -3.0/2, -2.0};
-    int S = sizeof(A)/sizeof(double);
-    int D = S - 1;
+    int N = sizeof(A)/sizeof(double);
     double tmin = -5;
     double tmax = 3;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
 
+    QString Coef = "";
+    for(int i = 0; i < N; i++) {
+        if(i != 0) Coef += ";";
+        Coef += QString("%1").arg(A[i]);
+    }
+
     m_paramMap.insert("ID", "polynomial");
+    m_paramMap.insert("Coef", Coef);
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi = 0;
-
-        for(int j = 0; j <= D; j++) {
-            double aj = A[j];
-            if(aj == 0) continue;
-            double xj = qPow(xi, (double)(D - j));
-            double yj = aj*xj;
-            yi += yj;
-        }
+        double xi = tmin + i*Te;
+        double yi = polynomial(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -404,9 +394,10 @@ double GSignal::triangle(const double& x) {
     int xA = dx/T;
     double xB = dx - xA*T;
     double xT = T/2;
+    double A = 2*(Vmax - Vmin)/T;
     double y;
-    if(xB < xT) y = Vmax;
-    else y = Vmin;
+    if(xB < xT) y = A*xB + Vmin;
+    else y = -A*(xB - xT) + Vmax;
     return y;
 }
 //===============================================
@@ -420,27 +411,28 @@ double GSignal::sawtooth(const double& x) {
     double dx = x - x0;
     int xA = dx/T;
     double xB = dx - xA*T;
-    double xT = T/2;
-    double y;
-    if(xB < xT) y = Vmax;
-    else y = Vmin;
+    double A = (Vmax - Vmin)/T;
+    double y = A*xB + Vmin;
     return y;
 }
 //===============================================
 double GSignal::polynomial(const double& x) {
-    double F = m_paramMap.value("F").toDouble();
-    double Vmin = m_paramMap.value("Vmin").toDouble();
-    double Vmax = m_paramMap.value("Vmax").toDouble();
-    double x0 = m_paramMap.value("tmin").toDouble();
+    QString Coef = m_paramMap.value("Coef").toString();
+    QStringList CoefA = Coef.split(";");
+    int N = CoefA.size();
+    int D = N - 1;
+    QVector<double> A(N);
+    for(int i = 0; i < N; i++) A[i] = ((QString)CoefA.at(i)).toDouble();
+    double y = 0.0;
 
-    double T = 1/F;
-    double dx = x - x0;
-    int xA = dx/T;
-    double xB = dx - xA*T;
-    double xT = T/2;
-    double y;
-    if(xB < xT) y = Vmax;
-    else y = Vmin;
+    for(int i = 0; i <= D; i++) {
+        double ai = A[i];
+        if(ai == 0) continue;
+        double xi = qPow(x, (double)(D - i));
+        double yi = ai*xi;
+        y += yi;
+    }
+
     return y;
 }
 //===============================================
