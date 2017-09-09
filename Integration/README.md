@@ -64,6 +64,7 @@ GIntegrate::Instance()->gaussLegendre();
 # Signal Cosinus
 
 ![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/cosinus.png)
+![Signal Cosinus](https://raw.githubusercontent.com/gkesse/ReadyDSP/master/Integration/img/cosinus2.png)
 
 # Signal Mono-Alternance
 

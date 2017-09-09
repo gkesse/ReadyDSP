@@ -38,6 +38,7 @@ public:
 public:
     double signal(const double& x);
     double sinus(const double& x);
+    double cosinus(const double& x);
     double square(const double& x);
 
 private:

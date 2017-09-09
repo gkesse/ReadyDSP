@@ -80,23 +80,23 @@ void GSignal::sinus() {
 //===============================================
 void GSignal::cosinus() {
     double F = 50;
-    double W = 2*M_PI*F;
     double T = 1/F;
     double tmin = -1*T;
     double tmax = +1*T;
-    int Npow = 8;
-    int Nmax = (int)qPow(2.0, (double)Npow) + 1;
+    int Nmax = (int)qPow(2.0, (double)Npow);
     double Te = (tmax - tmin)/(Nmax - 1);
     double Vmax = 2;
 
     m_paramMap.insert("ID", "cosinus");
+    m_paramMap.insert("F", F);
+    m_paramMap.insert("Vmax", Vmax);
+
     m_x.resize(Nmax);
     m_y.resize(Nmax);
 
     for(int i = 0; i < Nmax; i++) {
-        double di = i*Te;
-        double xi = tmin + di;
-        double yi = Vmax*qCos(W*xi);
+        double xi = tmin + i*Te;
+        double yi = cosinus(xi);
         m_x[i] = xi;
         m_y[i] = yi;
     }
@@ -329,7 +329,7 @@ double GSignal::signal(const double& x) {
     QString id = m_paramMap.value("ID").toString();
     double y;
     if(id == "sinus") y = sinus(x);
-    else if(id == "cosinus") y = square(x);
+    else if(id == "cosinus") y = cosinus(x);
     else if(id == "halfwave") y = square(x);
     else if(id == "fullwave") y = square(x);
     else if(id == "square") y = square(x);
@@ -345,6 +345,15 @@ double GSignal::sinus(const double& x) {
 
     double W = 2*M_PI*F;
     double y = Vmax*qSin(W*x);
+    return y;
+}
+//===============================================
+double GSignal::cosinus(const double& x) {
+    double F = m_paramMap.value("F").toDouble();
+    double Vmax = m_paramMap.value("Vmax").toDouble();
+
+    double W = 2*M_PI*F;
+    double y = Vmax*qCos(W*x);
     return y;
 }
 //===============================================
