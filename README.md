@@ -15,7 +15,7 @@ Avec à la fois des compétences en Systèmes Embarqués et en Robotique.
 C'est une bibliothèque développée en C++ et maintenu par 
 [Gerard KESSE](http://5.48.215.193:8855/presentation/ "Accédez à mon site web (ReadyDev)").
 
-Les concepts abordées :  
+Les concepts abordés :  
 * [Signal](https://github.com/gkesse/ReadyDSP/tree/master/Signal "Signal")  
 * [Echantillonnage](https://github.com/gkesse/ReadyDSP/tree/master/Echantillonnage "Echantillonnage")  
 * [Transformée de Fourier Rapide](https://github.com/gkesse/ReadyDSP/tree/master/Fourier_FFT "Transformée de Fourier Rapide")  
